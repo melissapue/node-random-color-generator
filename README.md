@@ -25,9 +25,10 @@ node index.js dark
 
 ## TODOs
 
-- [ ] figure out how to print a single color
-- [ ] figure out how to get colors (maybe library)
-- [ ] figure out how to randomize colors
-- [ ] figure out hwo to receive input from the command line (command line arguments)
-- [ ] figure out how to print hue with user input
-- [ ] figure out how to match luminosity with user input
+- [x] figure out how to print a single color
+- [x] figure out how to get colors (maybe library)
+- [x] figure out how to randomize colors
+- [x] figure out hwo to receive input from the command line (command line arguments)
+- [x] figure out how to print hue with user input
+- [x] figure out how to match luminosity with user input
+- [x] figure out how to get # box 9x31 output as shown in the task
