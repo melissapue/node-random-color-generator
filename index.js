@@ -3,7 +3,9 @@ import chroma from 'chroma-js'; // Color Source
 
 // Adjustment settings for hue and luminosity
 function getColor(hue, luminosity) {
-  if (hue) {
+  const isValidHue = chroma.valid(hue);
+
+  if (isValidHue) {
     if (luminosity === 'dark') {
       return chroma(hue).darken(2).hex();
     } else if (luminosity === 'light') {
@@ -12,7 +14,15 @@ function getColor(hue, luminosity) {
       return chroma(hue).hex();
     }
   }
-  return chroma.random().hex(); // Show random color if userIput is undefinied
+
+  // Generate random color based on luminosity if no valid hue is provided
+  if (luminosity === 'dark') {
+    return chroma.random().darken(2).hex();
+  } else if (luminosity === 'light') {
+    return chroma.random().brighten(2).hex();
+  }
+
+  return chroma.random().hex(); // Default random color
 }
 
 const userInput = process.argv.slice(2).join(' ');
